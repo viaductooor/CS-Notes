@@ -1,17 +1,4 @@
-<!-- GFM-TOC -->
-* [30. 包含 min 函数的栈](#30-包含-min-函数的栈)
-* [31. 栈的压入、弹出序列](#31-栈的压入弹出序列)
-* [32.1 从上往下打印二叉树](#321-从上往下打印二叉树)
-* [32.2 把二叉树打印成多行](#322-把二叉树打印成多行)
-* [32.3 按之字形顺序打印二叉树](#323-按之字形顺序打印二叉树)
-* [33. 二叉搜索树的后序遍历序列](#33-二叉搜索树的后序遍历序列)
-* [34. 二叉树中和为某一值的路径](#34-二叉树中和为某一值的路径)
-* [35. 复杂链表的复制](#35-复杂链表的复制)
-* [36. 二叉搜索树与双向链表](#36-二叉搜索树与双向链表)
-* [37. 序列化二叉树](#37-序列化二叉树)
-* [38. 字符串的排列](#38-字符串的排列)
-* [39. 数组中出现次数超过一半的数字](#39-数组中出现次数超过一半的数字)
-<!-- GFM-TOC -->
+[TOC]
 
 
 # 30. 包含 min 函数的栈
@@ -87,7 +74,7 @@ public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
 
 例如，以下二叉树层次遍历的结果为：1,2,3,4,5,6,7
 
-<div align="center"> <img src="pics/d5e838cf-d8a2-49af-90df-1b2a714ee676.jpg" width="250"/> </div><br>
+  <img src="pics/d5e838cf-d8a2-49af-90df-1b2a714ee676.jpg" width="250"/>   
 
 ## 解题思路
 
@@ -195,7 +182,7 @@ public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 
 例如，下图是后序遍历序列 1,3,2 所对应的二叉搜索树。
 
-<div align="center"> <img src="pics/13454fa1-23a8-4578-9663-2b13a6af564a.jpg" width="150"/> </div><br>
+  <img src="pics/13454fa1-23a8-4578-9663-2b13a6af564a.jpg" width="150"/>   
 
 ## 解题思路
 
@@ -230,7 +217,7 @@ private boolean verify(int[] sequence, int first, int last) {
 
 下图的二叉树有两条和为 22 的路径：10, 5, 7 和 10, 12
 
-<div align="center"> <img src="pics/ed77b0e6-38d9-4a34-844f-724f3ffa2c12.jpg" width="200"/> </div><br>
+  <img src="pics/ed77b0e6-38d9-4a34-844f-724f3ffa2c12.jpg" width="200"/>   
 
 ## 解题思路
 
@@ -277,21 +264,21 @@ public class RandomListNode {
 }
 ```
 
-<div align="center"> <img src="pics/66a01953-5303-43b1-8646-0c77b825e980.png" width="300"/> </div><br>
+  <img src="pics/66a01953-5303-43b1-8646-0c77b825e980.png" width="300"/>   
 
 ## 解题思路
 
 第一步，在每个节点的后面插入复制的节点。
 
-<div align="center"> <img src="pics/dfd5d3f8-673c-486b-8ecf-d2082107b67b.png" width="600"/> </div><br>
+  <img src="pics/dfd5d3f8-673c-486b-8ecf-d2082107b67b.png" width="600"/>   
 
 第二步，对复制节点的 random 链接进行赋值。
 
-<div align="center"> <img src="pics/cafbfeb8-7dfe-4c0a-a3c9-750eeb824068.png" width="600"/> </div><br>
+  <img src="pics/cafbfeb8-7dfe-4c0a-a3c9-750eeb824068.png" width="600"/>   
 
 第三步，拆分。
 
-<div align="center"> <img src="pics/e151b5df-5390-4365-b66e-b130cd253c12.png" width="600"/> </div><br>
+  <img src="pics/e151b5df-5390-4365-b66e-b130cd253c12.png" width="600"/>   
 
 ```java
 public RandomListNode Clone(RandomListNode pHead) {
@@ -333,7 +320,7 @@ public RandomListNode Clone(RandomListNode pHead) {
 
 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
 
-<div align="center"> <img src="pics/05a08f2e-9914-4a77-92ef-aebeaecf4f66.jpg" width="400"/> </div><br>
+  <img src="pics/05a08f2e-9914-4a77-92ef-aebeaecf4f66.jpg" width="400"/>   
 
 ## 解题思路
 
@@ -472,5 +459,4 @@ public int MoreThanHalfNum_Solution(int[] nums) {
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+

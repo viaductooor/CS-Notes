@@ -1,38 +1,11 @@
-<!-- GFM-TOC -->
-* [BFS](#bfs)
-    * [1. 计算在网格中从原点到特定点的最短路径长度](#1-计算在网格中从原点到特定点的最短路径长度)
-    * [2. 组成整数的最小平方数数量](#2-组成整数的最小平方数数量)
-    * [3. 最短单词路径](#3-最短单词路径)
-* [DFS](#dfs)
-    * [1. 查找最大的连通面积](#1-查找最大的连通面积)
-    * [2. 矩阵中的连通分量数目](#2-矩阵中的连通分量数目)
-    * [3. 好友关系的连通分量数目](#3-好友关系的连通分量数目)
-    * [4. 填充封闭区域](#4-填充封闭区域)
-    * [5. 能到达的太平洋和大西洋的区域](#5-能到达的太平洋和大西洋的区域)
-* [Backtracking](#backtracking)
-    * [1. 数字键盘组合](#1-数字键盘组合)
-    * [2. IP 地址划分](#2-ip-地址划分)
-    * [3. 在矩阵中寻找字符串](#3-在矩阵中寻找字符串)
-    * [4. 输出二叉树中所有从根到叶子的路径](#4-输出二叉树中所有从根到叶子的路径)
-    * [5. 排列](#5-排列)
-    * [6. 含有相同元素求排列](#6-含有相同元素求排列)
-    * [7. 组合](#7-组合)
-    * [8. 组合求和](#8-组合求和)
-    * [9. 含有相同元素的组合求和](#9-含有相同元素的组合求和)
-    * [10. 1-9 数字的组合求和](#10-1-9-数字的组合求和)
-    * [11. 子集](#11-子集)
-    * [12. 含有相同元素求子集](#12-含有相同元素求子集)
-    * [13. 分割字符串使得每个部分都是回文数](#13-分割字符串使得每个部分都是回文数)
-    * [14. 数独](#14-数独)
-    * [15. N 皇后](#15-n-皇后)
-<!-- GFM-TOC -->
+[TOC]
 
 
 深度优先搜索和广度优先搜索广泛运用于树和图中，但是它们的应用远远不止如此。
 
 # BFS
 
-<div align="center"> <img src="pics/95903878-725b-4ed9-bded-bc4aae0792a9.jpg"/> </div><br>
+  <img src="pics/95903878-725b-4ed9-bded-bc4aae0792a9.jpg"/>   
 
 广度优先搜索一层一层地进行遍历，每层遍历都以上一层遍历的结果作为起点，遍历一个距离能访问到的所有节点。需要注意的是，遍历过的节点不能再次被遍历。
 
@@ -261,7 +234,7 @@ private int getShortestPath(List<Integer>[] graphic, int start, int end) {
 
 # DFS
 
-<div align="center"> <img src="pics/74dc31eb-6baa-47ea-ab1c-d27a0ca35093.png"/> </div><br>
+  <img src="pics/74dc31eb-6baa-47ea-ab1c-d27a0ca35093.png"/>   
 
 广度优先搜索一层一层遍历，每一层得到的所有新节点，要用队列存储起来以备下一层遍历的时候再遍历。
 
@@ -572,7 +545,7 @@ Backtracking（回溯）属于 DFS。
 
 [17. Letter Combinations of a Phone Number (Medium)](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
 
-<div align="center"> <img src="pics/9823768c-212b-4b1a-b69a-b3f59e07b977.jpg"/> </div><br>
+  <img src="pics/9823768c-212b-4b1a-b69a-b3f59e07b977.jpg"/>   
 
 ```html
 Input:Digit string "23"
@@ -1149,7 +1122,7 @@ private boolean isPalindrome(String s, int begin, int end) {
 
 [37. Sudoku Solver (Hard)](https://leetcode.com/problems/sudoku-solver/description/)
 
-<div align="center"> <img src="pics/0e8fdc96-83c1-4798-9abe-45fc91d70b9d.png"/> </div><br>
+  <img src="pics/0e8fdc96-83c1-4798-9abe-45fc91d70b9d.png"/>   
 
 ```java
 private boolean[][] rowsUsed = new boolean[9][10];
@@ -1206,7 +1179,7 @@ private int cubeNum(int i, int j) {
 
 [51. N-Queens (Hard)](https://leetcode.com/problems/n-queens/description/)
 
-<div align="center"> <img src="pics/067b310c-6877-40fe-9dcf-10654e737485.jpg"/> </div><br>
+  <img src="pics/067b310c-6877-40fe-9dcf-10654e737485.jpg"/>   
 
 在 n\*n 的矩阵中摆放 n 个皇后，并且每个皇后不能在同一行，同一列，同一对角线上，求所有的 n 皇后的解。
 
@@ -1214,12 +1187,12 @@ private int cubeNum(int i, int j) {
 
 45 度对角线标记数组的长度为 2 \* n - 1，通过下图可以明确 (r, c) 的位置所在的数组下标为 r + c。
 
-<div align="center"> <img src="pics/9c422923-1447-4a3b-a4e1-97e663738187.jpg" width="300px"> </div><br>
+  <img src="pics/9c422923-1447-4a3b-a4e1-97e663738187.jpg" width="300px">   
 
 
 135 度对角线标记数组的长度也是 2 \* n - 1，(r, c) 的位置所在的数组下标为 n - 1 - (r - c)。
 
-<div align="center"> <img src="pics/7a85e285-e152-4116-b6dc-3fab27ba9437.jpg" width="300px"> </div><br>
+  <img src="pics/7a85e285-e152-4116-b6dc-3fab27ba9437.jpg" width="300px">   
 
 ```java
 private List<List<String>> solutions;
@@ -1271,5 +1244,4 @@ private void backtracking(int row) {
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+

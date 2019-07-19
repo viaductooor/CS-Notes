@@ -1,21 +1,4 @@
-<!-- GFM-TOC -->
-* [一、概览](#一概览)
-    * [Collection](#collection)
-    * [Map](#map)
-* [二、容器中的设计模式](#二容器中的设计模式)
-    * [迭代器模式](#迭代器模式)
-    * [适配器模式](#适配器模式)
-* [三、源码分析](#三源码分析)
-    * [ArrayList](#arraylist)
-    * [Vector](#vector)
-    * [CopyOnWriteArrayList](#copyonwritearraylist)
-    * [LinkedList](#linkedlist)
-    * [HashMap](#hashmap)
-    * [ConcurrentHashMap](#concurrenthashmap)
-    * [LinkedHashMap](#linkedhashmap)
-    * [WeakHashMap](#weakhashmap)
-* [参考资料](#参考资料)
-<!-- GFM-TOC -->
+[TOC]
 
 
 # 一、概览
@@ -24,7 +7,7 @@
 
 ## Collection
 
-<div align="center"> <img src="pics/73403d84-d921-49f1-93a9-d8fe050f3497.png" width="800px"> </div><br>
+  <img src="pics/73403d84-d921-49f1-93a9-d8fe050f3497.png" width="800px">   
 
 ### 1. Set
 
@@ -50,7 +33,7 @@
 
 ## Map
 
-<div align="center"> <img src="pics/774d756b-902a-41a3-a3fd-81ca3ef688dc.png" width="500px"> </div><br>
+  <img src="pics/774d756b-902a-41a3-a3fd-81ca3ef688dc.png" width="500px">   
 
 - TreeMap：基于红黑树实现。
 
@@ -65,7 +48,7 @@
 
 ## 迭代器模式
 
-<div align="center"> <img src="pics/93fb1d38-83f9-464a-a733-67b2e6bfddda.png" width="600px"> </div><br>
+  <img src="pics/93fb1d38-83f9-464a-a733-67b2e6bfddda.png" width="600px">   
 
 Collection 继承了 Iterable 接口，其中的 iterator() 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
 
@@ -126,7 +109,7 @@ public class ArrayList<E> extends AbstractList<E>
 private static final int DEFAULT_CAPACITY = 10;
 ```
 
-<div align="center"> <img src="pics/52a7744f-5bce-4ff3-a6f0-8449334d9f3d.png" width="400px"> </div><br>
+  <img src="pics/52a7744f-5bce-4ff3-a6f0-8449334d9f3d.png" width="400px">   
 
 ### 2. 扩容
 
@@ -389,7 +372,7 @@ transient Node<E> first;
 transient Node<E> last;
 ```
 
-<div align="center"> <img src="pics/c8563120-cb00-4dd6-9213-9d9b337a7f7c.png" width="500px"> </div><br>
+  <img src="pics/c8563120-cb00-4dd6-9213-9d9b337a7f7c.png" width="500px">   
 
 ### 2. 与 ArrayList 的比较
 
@@ -411,7 +394,7 @@ transient Entry[] table;
 
 Entry 存储着键值对。它包含了四个字段，从 next 字段我们可以看出 Entry 是一个链表。即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用拉链法来解决冲突，同一个链表中存放哈希值和散列桶取模运算结果相同的 Entry。
 
-<div align="center"> <img src="pics/9420a703-1f9d-42ce-808e-bcb82b56483d.png" width="550px"> </div><br>
+  <img src="pics/9420a703-1f9d-42ce-808e-bcb82b56483d.png" width="550px">   
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -487,7 +470,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-<div align="center"> <img src="pics/e0870f80-b79e-4542-ae39-7420d4b0d8fe.png" width="550px"> </div><br>
+  <img src="pics/e0870f80-b79e-4542-ae39-7420d4b0d8fe.png" width="550px">   
 
 ### 3. put 操作
 
@@ -823,7 +806,7 @@ final Segment<K,V>[] segments;
 static final int DEFAULT_CONCURRENCY_LEVEL = 16;
 ```
 
-<div align="center"> <img src="pics/db808eff-31d7-4229-a4ad-b8ae71870a3a.png" width="550px"> </div><br>
+  <img src="pics/db808eff-31d7-4229-a4ad-b8ae71870a3a.png" width="550px">   
 
 ### 2. size 操作
 
@@ -1113,5 +1096,4 @@ public final class ConcurrentCache<K, V> {
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+

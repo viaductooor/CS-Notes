@@ -1,34 +1,4 @@
-<!-- GFM-TOC -->
-* [一、概览](#一概览)
-* [二、磁盘操作](#二磁盘操作)
-* [三、字节操作](#三字节操作)
-    * [实现文件复制](#实现文件复制)
-    * [装饰者模式](#装饰者模式)
-* [四、字符操作](#四字符操作)
-    * [编码与解码](#编码与解码)
-    * [String 的编码方式](#string-的编码方式)
-    * [Reader 与 Writer](#reader-与-writer)
-    * [实现逐行输出文本文件的内容](#实现逐行输出文本文件的内容)
-* [五、对象操作](#五对象操作)
-    * [序列化](#序列化)
-    * [Serializable](#serializable)
-    * [transient](#transient)
-* [六、网络操作](#六网络操作)
-    * [InetAddress](#inetaddress)
-    * [URL](#url)
-    * [Sockets](#sockets)
-    * [Datagram](#datagram)
-* [七、NIO](#七nio)
-    * [流与块](#流与块)
-    * [通道与缓冲区](#通道与缓冲区)
-    * [缓冲区状态变量](#缓冲区状态变量)
-    * [文件 NIO 实例](#文件-nio-实例)
-    * [选择器](#选择器)
-    * [套接字 NIO 实例](#套接字-nio-实例)
-    * [内存映射文件](#内存映射文件)
-    * [对比](#对比)
-* [八、参考资料](#八参考资料)
-<!-- GFM-TOC -->
+[TOC]
 
 
 # 一、概览
@@ -97,7 +67,7 @@ Java I/O 使用了装饰者模式来实现。以 InputStream 为例，
 - FileInputStream 是 InputStream 的子类，属于具体组件，提供了字节流的输入操作；
 - FilterInputStream 属于抽象装饰者，装饰者用于装饰组件，为组件提供额外的功能。例如 BufferedInputStream 为 FileInputStream 提供缓存的功能。
 
-<div align="center"> <img src="pics/9709694b-db05-4cce-8d2f-1c8b09f4d921.png" width="650px"> </div><br>
+  <img src="pics/9709694b-db05-4cce-8d2f-1c8b09f4d921.png" width="650px">   
 
 实例化一个具有缓存功能的字节流对象时，只需要在 FileInputStream 对象上再套一层 BufferedInputStream 对象即可。
 
@@ -277,7 +247,7 @@ public static void main(String[] args) throws IOException {
 - Socket：客户端类
 - 服务器和客户端通过 InputStream 和 OutputStream 进行输入输出。
 
-<div align="center"> <img src="pics/1e6affc4-18e5-4596-96ef-fb84c63bf88a.png" width="550px"> </div><br>
+  <img src="pics/1e6affc4-18e5-4596-96ef-fb84c63bf88a.png" width="550px">   
 
 ## Datagram
 
@@ -339,23 +309,23 @@ I/O 包和 NIO 已经很好地集成了，java.io.\* 已经以 NIO 为基础重�
 
 ① 新建一个大小为 8 个字节的缓冲区，此时 position 为 0，而 limit = capacity = 8。capacity 变量不会改变，下面的讨论会忽略它。
 
-<div align="center"> <img src="pics/1bea398f-17a7-4f67-a90b-9e2d243eaa9a.png"/> </div><br>
+  <img src="pics/1bea398f-17a7-4f67-a90b-9e2d243eaa9a.png"/>   
 
 ② 从输入通道中读取 5 个字节数据写入缓冲区中，此时 position 为 5，limit 保持不变。
 
-<div align="center"> <img src="pics/80804f52-8815-4096-b506-48eef3eed5c6.png"/> </div><br>
+  <img src="pics/80804f52-8815-4096-b506-48eef3eed5c6.png"/>   
 
 ③ 在将缓冲区的数据写到输出通道之前，需要先调用 flip() 方法，这个方法将 limit 设置为当前 position，并将 position 设置为 0。
 
-<div align="center"> <img src="pics/952e06bd-5a65-4cab-82e4-dd1536462f38.png"/> </div><br>
+  <img src="pics/952e06bd-5a65-4cab-82e4-dd1536462f38.png"/>   
 
 ④ 从缓冲区中取 4 个字节到输出缓冲中，此时 position 设为 4。
 
-<div align="center"> <img src="pics/b5bdcbe2-b958-4aef-9151-6ad963cb28b4.png"/> </div><br>
+  <img src="pics/b5bdcbe2-b958-4aef-9151-6ad963cb28b4.png"/>   
 
 ⑤ 最后需要调用 clear() 方法来清空缓冲区，此时 position 和 limit 都被设置为最初位置。
 
-<div align="center"> <img src="pics/67bf5487-c45d-49b6-b9c0-a058d8c68902.png"/> </div><br>
+  <img src="pics/67bf5487-c45d-49b6-b9c0-a058d8c68902.png"/>   
 
 ## 文件 NIO 实例
 
@@ -413,7 +383,7 @@ NIO 实现了 IO 多路复用中的 Reactor 模型，一个线程 Thread 使用�
 
 应该注意的是，只有套接字 Channel 才能配置为非阻塞，而 FileChannel 不能，为 FileChannel 配置非阻塞也没有意义。
 
-<div align="center"> <img src="pics/093f9e57-429c-413a-83ee-c689ba596cef.png" width="350px"> </div><br>
+  <img src="pics/093f9e57-429c-413a-83ee-c689ba596cef.png" width="350px">   
 
 ### 1. 创建选择器
 
@@ -622,5 +592,4 @@ NIO 与普通 I/O 的区别主要有以下两点：
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+

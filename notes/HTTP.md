@@ -6,7 +6,7 @@
 
 URI 包含 URL 和 URN。
 
-<div align="center"> <img src="pics/8441b2c4-dca7-4d6b-8efb-f22efccaf331.png" width="500px"> </div><br>
+  <img src="pics/8441b2c4-dca7-4d6b-8efb-f22efccaf331.png" width="500px">   
 
 ## 请求和响应报文
 
@@ -103,7 +103,7 @@ DELETE /file.html HTTP/1.1
 CONNECT www.example.com:443 HTTP/1.1
 ```
 
-<div align="center"> <img src="pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" width=""/> </div><br>
+  <img src="pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" width=""/>   
 
 ## TRACE
 
@@ -679,7 +679,7 @@ HTTP/1.x 实现简单是以牺牲性能为代价的：
 
 HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式的。
 
-<div align="center"> <img src="pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" width="400"/> </div><br>
+  <img src="pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" width="400"/>   
 
 在通信过程中，只会有一个 TCP 连接存在，它承载了任意数量的双向数据流（Stream）。
 
@@ -703,7 +703,7 @@ HTTP/2.0 要求客户端和服务器同时维护和更新一个包含之前见�
 
 不仅如此，HTTP/2.0 也使用 Huffman 编码对首部字段进行压缩。
 
-<img src="pics/_u4E0B_u8F7D.png" width="600"/> </div><br>
+<img src="pics/_u4E0B_u8F7D.png" width="600"/>   
 
 # 八、HTTP/1.1 新特性
 

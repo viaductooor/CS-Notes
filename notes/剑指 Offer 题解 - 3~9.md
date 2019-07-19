@@ -1,12 +1,4 @@
-<!-- GFM-TOC -->
-* [3. 数组中重复的数字](#3-数组中重复的数字)
-* [4. 二维数组中的查找](#4-二维数组中的查找)
-* [5. 替换空格](#5-替换空格)
-* [6. 从尾到头打印链表](#6-从尾到头打印链表)
-* [7. 重建二叉树](#7-重建二叉树)
-* [8. 二叉树的下一个结点](#8-二叉树的下一个结点)
-* [9. 用两个栈实现队列](#9-用两个栈实现队列)
-<!-- GFM-TOC -->
+[TOC]
 
 
 # 3. 数组中重复的数字
@@ -33,7 +25,7 @@ Output:
 
 以 (2, 3, 1, 0, 2, 5) 为例，遍历到位置 4 时，该位置上的数为 2，但是第 2 个位置上已经有一个 2 的值了，因此可以知道 2 重复：
 
-<div align="center"> <img src="pics/49d2adc1-b28a-44bf-babb-d44993f4a2e3.gif" width="250px"> </div><br>
+  <img src="pics/49d2adc1-b28a-44bf-babb-d44993f4a2e3.gif" width="250px">   
 
 
 ```java
@@ -87,7 +79,7 @@ Given target = 20, return false.
 
 该二维数组中的一个数，小于它的数一定在其左边，大于它的数一定在其下边。因此，从右上角开始查找，就可以根据 target 和当前元素的大小关系来缩小查找区间，当前元素的查找区间为左下角的所有元素。
 
-<div align="center"> <img src="pics/0ad9f7ba-f408-4999-a77a-9b73562c9088.gif" width="200px"> </div><br>
+  <img src="pics/0ad9f7ba-f408-4999-a77a-9b73562c9088.gif" width="200px">   
 
 ```java
 public boolean Find(int target, int[][] matrix) {
@@ -132,7 +124,7 @@ Output:
 
 从后向前遍是为了在改变 P2 所指向的内容时，不会影响到 P1 遍历原来字符串的内容。
 
-<div align="center"> <img src="pics/6980aef0-debe-4b4b-8da5-8b1befbc1408.gif" width="230px"> </div><br>
+  <img src="pics/6980aef0-debe-4b4b-8da5-8b1befbc1408.gif" width="230px">   
 
 ```java
 public String replaceSpace(StringBuffer str) {
@@ -164,7 +156,7 @@ public String replaceSpace(StringBuffer str) {
 
 从尾到头反过来打印出每个结点的值。
 
-<div align="center"> <img src="pics/f5792051-d9b2-4ca4-a234-a4a2de3d5a57.png" width="280px"> </div><br>
+  <img src="pics/f5792051-d9b2-4ca4-a234-a4a2de3d5a57.png" width="280px">   
 
 ## 解题思路
 
@@ -192,7 +184,7 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 - 头结点是在头插法中使用的一个额外节点，这个节点不存储值；
 - 第一个节点就是链表的第一个真正存储值的节点。
 
-<div align="center"> <img src="pics/0dae7e93-cfd1-4bd3-97e8-325b032b716f.gif" width="370px"> </div><br>
+  <img src="pics/0dae7e93-cfd1-4bd3-97e8-325b032b716f.gif" width="370px">   
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -219,7 +211,7 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 
 栈具有后进先出的特点，在遍历链表时将值按顺序放入栈中，最后出栈的顺序即为逆序。
 
-<div align="center"> <img src="pics/9d1deeba-4ae1-41dc-98f4-47d85b9831bc.gif" width="300px"> </div><br>
+  <img src="pics/9d1deeba-4ae1-41dc-98f4-47d85b9831bc.gif" width="300px">   
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -244,13 +236,13 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 根据二叉树的前序遍历和中序遍历的结果，重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
 
 
-<div align="center"> <img src="pics/31d9adce-2af8-4754-8386-0aabb4e500b0.png" width="300"/> </div><br>
+  <img src="pics/31d9adce-2af8-4754-8386-0aabb4e500b0.png" width="300"/>   
 
 ## 解题思路
 
 前序遍历的第一个值为根节点的值，使用这个值将中序遍历结果分成两部分，左部分为树的左子树中序遍历结果，右部分为树的右子树中序遍历的结果。
 
-<div align="center"> <img src="pics/c269e362-1128-4212-9cf3-d4c12b363b2f.gif" width="330px"> </div><br>
+  <img src="pics/c269e362-1128-4212-9cf3-d4c12b363b2f.gif" width="330px">   
 
 ```java
 // 缓存中序遍历数组每个值对应的索引
@@ -300,11 +292,11 @@ public class TreeLinkNode {
 
 ① 如果一个节点的右子树不为空，那么该节点的下一个节点是右子树的最左节点；
 
-<div align="center"> <img src="pics/b0611f89-1e5f-4494-a795-3544bf65042a.gif" width="220px"/> </div><br>
+  <img src="pics/b0611f89-1e5f-4494-a795-3544bf65042a.gif" width="220px"/>   
 
 ② 否则，向上找第一个左链接指向的树包含该节点的祖先节点。
 
-<div align="center"> <img src="pics/95080fae-de40-463d-a76e-783a0c677fec.gif" width="200px"/> </div><br>
+  <img src="pics/95080fae-de40-463d-a76e-783a0c677fec.gif" width="200px"/>   
 
 ```java
 public TreeLinkNode GetNext(TreeLinkNode pNode) {
@@ -337,7 +329,7 @@ public TreeLinkNode GetNext(TreeLinkNode pNode) {
 
 in 栈用来处理入栈（push）操作，out 栈用来处理出栈（pop）操作。一个元素进入 in 栈之后，出栈的顺序被反转。当元素要出栈时，需要先进入 out 栈，此时元素出栈顺序再一次被反转，因此出栈顺序就和最开始入栈顺序是相同的，先进入的元素先退出，这就是队列的顺序。
 
-<div align="center"> <img src="pics/3ea280b5-be7d-471b-ac76-ff020384357c.gif" width="350"/> </div><br>
+  <img src="pics/3ea280b5-be7d-471b-ac76-ff020384357c.gif" width="350"/>   
 
 ```java
 Stack<Integer> in = new Stack<Integer>();
@@ -363,5 +355,4 @@ public int pop() throws Exception {
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+

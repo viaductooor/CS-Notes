@@ -1,18 +1,4 @@
-<!-- GFM-TOC -->
-* [50. 第一个只出现一次的字符位置](#50-第一个只出现一次的字符位置)
-* [51. 数组中的逆序对](#51-数组中的逆序对)
-* [52. 两个链表的第一个公共结点](#52-两个链表的第一个公共结点)
-* [53. 数字在排序数组中出现的次数](#53-数字在排序数组中出现的次数)
-* [54. 二叉查找树的第 K 个结点](#54-二叉查找树的第-k-个结点)
-* [55.1 二叉树的深度](#551-二叉树的深度)
-* [55.2 平衡二叉树](#552-平衡二叉树)
-* [56. 数组中只出现一次的数字](#56-数组中只出现一次的数字)
-* [57.1 和为 S 的两个数字](#571-和为-s-的两个数字)
-* [57.2 和为 S 的连续正数序列](#572-和为-s-的连续正数序列)
-* [58.1 翻转单词顺序列](#581-翻转单词顺序列)
-* [58.2 左旋转字符串](#582-左旋转字符串)
-* [59. 滑动窗口的最大值](#59-滑动窗口的最大值)
-<!-- GFM-TOC -->
+[TOC]
 
 
 # 50. 第一个只出现一次的字符位置
@@ -120,7 +106,7 @@ private void merge(int[] nums, int l, int m, int h) {
 
 ## 题目描述
 
-<div align="center"> <img src="pics/5f1cb999-cb9a-4f6c-a0af-d90377295ab8.png" width="500"/> </div><br>
+  <img src="pics/5f1cb999-cb9a-4f6c-a0af-d90377295ab8.png" width="500"/>   
 
 ## 解题思路
 
@@ -212,7 +198,7 @@ private void inOrder(TreeNode root, int k) {
 
 从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
 
-<div align="center"> <img src="pics/ba355101-4a93-4c71-94fb-1da83639727b.jpg" width="350px"/> </div><br>
+  <img src="pics/ba355101-4a93-4c71-94fb-1da83639727b.jpg" width="350px"/>   
 
 ## 解题思路
 
@@ -230,7 +216,7 @@ public int TreeDepth(TreeNode root) {
 
 平衡二叉树左右子树高度差不超过 1。
 
-<div align="center"> <img src="pics/af1d1166-63af-47b6-9aa3-2bf2bd37bd03.jpg" width="250px"/> </div><br>
+  <img src="pics/af1d1166-63af-47b6-9aa3-2bf2bd37bd03.jpg" width="250px"/>   
 
 ## 解题思路
 
@@ -481,5 +467,4 @@ public ArrayList<Integer> maxInWindows(int[] num, int size) {
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+

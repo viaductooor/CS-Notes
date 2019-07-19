@@ -1,33 +1,4 @@
-<!-- GFM-TOC -->
-* [一、索引](#一索引)
-    * [B+ Tree 原理](#b-tree-原理)
-    * [MySQL 索引](#mysql-索引)
-    * [索引优化](#索引优化)
-    * [索引的优点](#索引的优点)
-    * [索引的使用条件](#索引的使用条件)
-* [二、查询性能优化](#二查询性能优化)
-    * [使用 Explain 进行分析](#使用-explain-进行分析)
-    * [优化数据访问](#优化数据访问)
-    * [重构查询方式](#重构查询方式)
-* [三、存储引擎](#三存储引擎)
-    * [InnoDB](#innodb)
-    * [MyISAM](#myisam)
-    * [比较](#比较)
-* [四、数据类型](#四数据类型)
-    * [整型](#整型)
-    * [浮点数](#浮点数)
-    * [字符串](#字符串)
-    * [时间和日期](#时间和日期)
-* [五、切分](#五切分)
-    * [水平切分](#水平切分)
-    * [垂直切分](#垂直切分)
-    * [Sharding 策略](#sharding-策略)
-    * [Sharding 存在的问题](#sharding-存在的问题)
-* [六、复制](#六复制)
-    * [主从复制](#主从复制)
-    * [读写分离](#读写分离)
-* [参考资料](#参考资料)
-<!-- GFM-TOC -->
+[TOC]
 
 
 # 一、索引
@@ -42,7 +13,7 @@ B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具�
 
 在 B+ Tree 中，一个节点中的 key 从左到右非递减排列，如果某个指针的左右相邻 key 分别是 key<sub>i</sub> 和 key<sub>i+1</sub>，且不为 null，则该指针指向节点的所有 key 大于等于 key<sub>i</sub> 且小于等于 key<sub>i+1</sub>。
 
-<div align="center"> <img src="pics/33576849-9275-47bb-ada7-8ded5f5e7c73.png" width="350px"> </div><br>
+  <img src="pics/33576849-9275-47bb-ada7-8ded5f5e7c73.png" width="350px">   
 
 ### 2. 操作
 
@@ -84,11 +55,11 @@ B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具�
 
 InnoDB 的 B+Tree 索引分为主索引和辅助索引。主索引的叶子节点 data 域记录着完整的数据记录，这种索引方式被称为聚簇索引。因为无法把数据行存放在两个不同的地方，所以一个表只能有一个聚簇索引。
 
-<div align="center"> <img src="pics/45016e98-6879-4709-8569-262b2d6d60b9.png" width="350px"> </div><br>
+  <img src="pics/45016e98-6879-4709-8569-262b2d6d60b9.png" width="350px">   
 
 辅助索引的叶子节点的 data 域记录着主键的值，因此在使用辅助索引进行查找时，需要先查找到主键值，然后再到主索引中进行查找。
 
-<div align="center"> <img src="pics/7c349b91-050b-4d72-a7f8-ec86320307ea.png" width="350px"> </div><br>
+  <img src="pics/7c349b91-050b-4d72-a7f8-ec86320307ea.png" width="350px">   
 
 ### 2. 哈希索引
 
@@ -350,7 +321,7 @@ MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提
 
 当一个表的数据不断增多时，Sharding 是必然的选择，它可以将数据分布到集群的不同节点上，从而缓存单个数据库的压力。
 
-<div align="center"> <img src="pics/63c2909f-0c5f-496f-9fe5-ee9176b31aba.jpg" width=""> </div><br>
+  <img src="pics/63c2909f-0c5f-496f-9fe5-ee9176b31aba.jpg" width="">   
 
 ## 垂直切分
 
@@ -358,7 +329,7 @@ MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提
 
 在数据库的层面使用垂直切分将按数据库中表的密集程度部署到不同的库中，例如将原来的电商数据库垂直切分成商品数据库、用户数据库等。
 
-<div align="center"> <img src="pics/e130e5b8-b19a-4f1e-b860-223040525cf6.jpg" width=""> </div><br>
+  <img src="pics/e130e5b8-b19a-4f1e-b860-223040525cf6.jpg" width="">   
 
 ## Sharding 策略
 
@@ -392,7 +363,7 @@ MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提
 -  **I/O 线程** ：负责从主服务器上读取二进制日志，并写入从服务器的中继日志（Relay log）。
 -  **SQL 线程** ：负责读取中继日志，解析出主服务器已经执行的数据更改并在从服务器中重放（Replay）。
 
-<div align="center"> <img src="pics/master-slave.png" width=""> </div><br>
+  <img src="pics/master-slave.png" width="">   
 
 ## 读写分离
 
@@ -406,7 +377,7 @@ MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提
 
 读写分离常用代理方式来实现，代理服务器接收应用层传来的读写请求，然后决定转发到哪个服务器。
 
-<div align="center"> <img src="pics/master-slave-proxy.png" width=""> </div><br>
+  <img src="pics/master-slave-proxy.png" width="">   
 
 # 参考资料
 
@@ -425,5 +396,4 @@ MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提
 
 
 
-</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
+
